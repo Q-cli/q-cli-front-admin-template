@@ -125,12 +125,14 @@ const TableList: React.FC = () => {
       title: '创建时间',
       dataIndex: 'createTime',
       sorter: true,
+      search: false,
       valueType: 'dateTime',
     },
     {
       title: '最后修改时间',
       dataIndex: 'updateTime',
       sorter: true,
+      search: false,
       valueType: 'dateTime',
     },
     {
