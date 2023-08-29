@@ -12,15 +12,10 @@
  */
 export default [
   {
-    path: '/user',
     layout: false,
-    routes: [
-      {
-        name: 'login',
-        path: '/user/login',
-        component: './User/Login',
-      },
-    ],
+    name: 'login',
+    path: '/user/login',
+    component: './User/Login',
   },
   {
     path: '/welcome',
@@ -46,10 +41,10 @@ export default [
     ],
   },
   {
-    name: 'list.table-list',
+    name: '用户管理',
     icon: 'table',
-    path: '/list',
-    component: './TableList',
+    path: '/user/list',
+    component: './User/List',
   },
   {
     path: '/',

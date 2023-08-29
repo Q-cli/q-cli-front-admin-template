@@ -2,12 +2,27 @@
 /* eslint-disable */
 
 declare namespace API {
+  type LoginParams = {
+    username?: string;
+    password?: string;
+  };
+
   type CurrentUser = {
     _id: string;
     username: string;
+    password?: string;
     createTime: number;
     updateTime: number;
   };
+
+  interface ResponsePage<T> extends ResponseBaseResult {
+    data: {
+      total: number;
+      current: number;
+      pageSize: number;
+      list: T[];
+    };
+  }
 
   type ResponseBaseResult = {
     code: number;
@@ -44,25 +59,6 @@ declare namespace API {
     data?: RuleListItem[];
     /** 列表的内容总数 */
     total?: number;
-    success?: boolean;
-  };
-
-  type FakeCaptcha = {
-    code?: number;
-    status?: string;
-  };
-
-  type LoginParams = {
-    name?: string;
-    password?: string;
-  };
-
-  type ErrorResponse = {
-    /** 业务约定的错误码 */
-    errorCode: string;
-    /** 业务上的错误信息 */
-    errorMessage?: string;
-    /** 业务上的请求是否成功 */
     success?: boolean;
   };
 
