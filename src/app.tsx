@@ -53,7 +53,9 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
     // , <SelectLang key="SelectLang" />
     actionsRender: () => [<Question key="doc" />],
     avatarProps: {
-      src: initialState?.currentUser?.avatar,
+      src: `https://robohash.org/q-cli-front-admin-${
+        initialState?.currentUser?._id ?? -1
+      }?set=set5&size=64x64`,
       title: <AvatarName />,
       render: (_, avatarChildren) => {
         return <AvatarDropdown>{avatarChildren}</AvatarDropdown>;
